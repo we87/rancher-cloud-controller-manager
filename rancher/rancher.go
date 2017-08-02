@@ -658,6 +658,10 @@ func (r *CloudProvider) NodeAddresses(nodeName types.NodeName) ([]api.NodeAddres
 			Type:    api.NodeExternalIP,
 			Address: ip.Address,
 		})
+		addresses = append(addresses, api.NodeAddress{
+			Type:    api.NodeInternalIP,
+			Address: ip.Address,
+		})
 	}
 
 	addresses = append(addresses, api.NodeAddress{
